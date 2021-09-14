@@ -1,15 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <h1>UnasDatabase information</h1>
+    <departments/>
+    <hr>
+<!--    <employees v-bind:empls="empls"></employees>-->
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import employees from "./components/employees"
+import departments from "./components/departments";
 
 export default {
   name: 'App',
+  data() {
+    return {
+      empls: [
+        {name: "Igor Jenkin", depName: "Penza", empSalary: "80000.00", shown: false},
+        {name: "Igor Jenkin", depName: "Penza", empSalary: "80000.00", shown: false},
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    departments,
+    employees
   }
 }
 </script>
